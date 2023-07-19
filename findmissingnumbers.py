@@ -50,13 +50,12 @@ class Solution:
         numbers.sort()
         missing = []
 
-        for i in range(len(numbers) - 1):
+        for i in range(len(int(numbers) - 1)):
             cur = numbers[i]
             next = numbers[i + 1]
             if next - cur > 1:
                 for missing_num in range(cur + 1, next):
                     missing.append(int(missing_num))
-
         if len(numbers) == 1:
             return "None missing"
         else:
