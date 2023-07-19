@@ -55,7 +55,7 @@ class Solution:
             next = numbers[i + 1]
             if next - cur > 1:
                 for missing_num in range(cur + 1, next):
-                    missing.append(missing_num)
+                    missing.append(int(missing_num))
 
         if len(numbers) == 1:
             return "None missing"
