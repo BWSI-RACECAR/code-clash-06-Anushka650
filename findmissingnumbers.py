@@ -47,10 +47,10 @@ class Solution:
         if len(numbers) < 1:
             return "Invalid input"
 
-        numbers.sort()
+        numbers = sorted(map(int, numbers))
         missing = []
 
-        for i in range(int(numbers[0]),int(numbers[len(numbers)-1])):
+        for i in range(int(numbers[0]), int(numbers[len(numbers)-1])):
             cur = int(numbers[i])
             next = int(numbers[i + 1])
             if next - cur > 1:
