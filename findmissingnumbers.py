@@ -50,9 +50,9 @@ class Solution:
         numbers.sort()
         missing = []
 
-        for i in range(len(int(numbers) - 1)):
+        for i in range(int(numbers[0]),int(numbers[len(numbers)-1])):
             cur = numbers[i]
-            next = numbers[i + 1]
+            next = numbers[i + 1]s
             if next - cur > 1:
                 for missing_num in range(cur + 1, next):
                     missing.append(int(missing_num))
