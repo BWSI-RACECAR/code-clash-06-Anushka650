@@ -42,27 +42,26 @@ Input: [3, 4, 2, 1, 6, 7, 5, 9, 10] Output:[8]
 Input: [3, 3, 3, 3, 4, 7] Output: [5, 6]
 
 """
+import math
 class Solution:
     def findMissingNumbers(self, numbers):
-        if len(numbers) < 1:
-            return "Invalid input"
-
-        numbers = sorted(map(int, numbers))
         missing = []
-
-        for i in range(int(numbers[0]), int(numbers[len(numbers)-1])):
-            cur = int(numbers[i])
-            next = int(numbers[i + 1])
-            if next - cur > 1:
-                for missing_num in range(cur + 1, next):
-                    missing.append(missing_num)
-
-        if len(numbers) == 1:
-            return "None missing"
+        if len(numbers) == 0:
+            return "Invalid input"
         else:
-            return missing
-
-
+            for i in range(math.ceil(min(numbers)), math.ceil(max(numbers))):
+                ctr = 0
+                for num in numbers:
+                    if num %1 != 0:
+                        num = math.ceil(num)
+                    if i == num:
+                        ctr = 1
+                if ctr == 0:
+                    missing.append(i)
+        if missing == []:
+            return "None missing"
+        return missing
+        
             #type numbers: list of float
             #return type: list of int
 
