@@ -49,13 +49,13 @@ class Solution:
 
         numbers.sort()
         missing = []
-        if len(numbers) > 1:
-            for i in range(len(numbers) - 1):
-                cur = numbers[i]
-                next = numbers[i + 1]
-                if next - cur > 1:
-                    for missing_num in range(cur + 1, next):
-                        missing.append(missing_num)
+
+        for i in range(len(numbers) - 1):
+            cur = numbers[i]
+            next = numbers[i + 1]
+            if next - cur > 1:
+                for missing_num in range(cur + 1, next):
+                    missing.append(missing_num)
 
         if len(numbers) == 1:
             return "None missing"
