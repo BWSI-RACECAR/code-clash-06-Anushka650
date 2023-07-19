@@ -52,7 +52,7 @@ class Solution:
 
         for i in range(int(numbers[0]),int(numbers[len(numbers)-1])):
             cur = numbers[i]
-            next = numbers[i + 1]s
+            next = numbers[i + 1]
             if next - cur > 1:
                 for missing_num in range(cur + 1, next):
                     missing.append(int(missing_num))
