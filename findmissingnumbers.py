@@ -51,8 +51,8 @@ class Solution:
         missing = []
 
         for i in range(int(numbers[0]),int(numbers[len(numbers)-1])):
-            cur = numbers[i]
-            next = numbers[i + 1]
+            cur = int(numbers[i])
+            next = int(numbers[i + 1])
             if next - cur > 1:
                 for missing_num in range(cur + 1, next):
                     missing.append(missing_num)
